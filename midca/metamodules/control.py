@@ -35,7 +35,7 @@ class MRSimpleControl(base.BaseModule):
         self.mem.set(self.mem.META_PLAN, None)
         self.mem.set(self.mem.META_GOALS, None)
         self.mem.set(self.mem.META_CURR_GOAL, None)
-        self.mem.set(self.mem.PLAN, [])
+        #self.mem.set(self.mem.PLAN, [])
 
     def act(self, action, verbose=2):
         # TODO: figure out a way to make the init_args more general (so actions can be kept separate)
@@ -77,7 +77,7 @@ class MRSimpleControl(base.BaseModule):
             if action[2] == "PyHopPlanner":
                 # print("current directory: "+str(os.getcwd()))
                 # print("str(dir(modules)) = "+str(dir(modules)))
-                planningModuleInstance = importlib.import_module("midca.modules.planning")
+                planningModuleInstance = importlib.import_module("midca.modules.plan.PyHopPlanner")
                 print(("loaded planning module, it has following attributes: " + str(dir(planningModuleInstance))))
                 # get the args used to init the old module and use them to init this one
                 print("init args is " + str(self.prev_init_args))

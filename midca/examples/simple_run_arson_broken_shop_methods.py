@@ -42,7 +42,7 @@ for phase in ["Simulate", "Perceive", "Interpret", "Eval", "Intend", "Plan", "Ac
 
 # add cognitive layer modules
 myMidca.append_module("Simulate", simulator.MidcaActionSimulator())
-myMidca.append_module("Simulate", simulator.ASCIIWorldViewer())
+myMidca.append_module("Simulate", simulator.ASCIIWorldViewer(DISPLAY_FUNC))
 myMidca.append_module("Perceive", PerfectObserver.PerfectObserver())
 myMidca.append_module("Interpret", ADistanceAnomalyNoter.ADistanceAnomalyNoter())
 myMidca.append_module("Interpret", UserGoalInput.UserGoalInput())
